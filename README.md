@@ -1,41 +1,39 @@
-# flashcard-app
+#Flashcard App
+Project Setup
+Installation
+Download the Qualified assessment files to your computer.
+Navigate to the project directory and run: npm install
+Usage
+To run the tests, use: npm test
 
-This project is designed to test your ability to work with rendering and state management using React. Before taking on this project, you should be comfortable with the learning objectives listed below:
+To run the application, use: npm start
 
-Installing packages via NPM
+This command will start two servers:
 
-Running tests from the command line
+API server runs on: http://localhost:5000
+React application runs on: http://localhost:3000
+Screens and Paths
+Home (/): Displays a list of decks with options to create, study, view, or delete a deck.
+Study (/decks/:deckId/study): Allows studying the cards from a specific deck.
+Create Deck (/decks/new): Used to create a new deck.
+Deck (/decks/:deckId): Displays all information about a specified deck.
+Edit Deck (/decks/:deckId/edit): Allows modification of an existing deck.
+Add Card (/decks/:deckId/cards/new): Allows adding a new card to an existing deck.
+Edit Card (/decks/:deckId/cards/:cardId/edit): Allows modification of an existing card.
+API
+The project has two main datasets: decks and cards. They can be accessed and modified using utility functions from src/utils/api/index.js. These functions allow CRUD operations with the API server.
 
-Writing React function components
-
-Creating routes, including nested routes, using React Router
-
-Using hooks like useState(), useParams(), and useHistory()
-
-Debugging React code through console output and using the VS Code debugger
-
-Steps to complete
-To complete this project, you must do the following:
-
-Write code that passes all the tests in the Qualified assessment in this lesson.
-
-Write code that passes all of the requirements outlined below, and submit your GitHub repo link in the next lesson.
-
-Remember to sync this Qualified project with your local machine so that you can commit it to GitHub in the next lesson.
-
-Requirements to pass
-For your project to pass, all of the following statements must be true. These criteria are reflected in the rubric in the following lesson.
-
-All tests are passing in Qualified.
-
-All the props are treated as read-only.
-
-State is never directly mutated; it's only updated via setState().
-
-The Edit Card and Create Card screens share the same form component.
-
-The useEffect() hooks have the appropriate dependencies listed in the dependency array.
-
-State is "lifted up" to the parent component where appropriate.
-
-All inputs are controlled. Generally, there is a warning on the console when you type into the input box and it changes from uncontrolled to controlled. The warning looks like this: "Warning: Input is changing an uncontrolled input of type <text|number|etc.> to be controlled." This is often the result of initializing the state to null or undefined.
+Data Structures
+Decks:
+{
+  "id": 1,
+  "name": "Rendering in React",
+  "description": "Quick overview of rendering in React."
+}
+Cards:
+{
+  "id": 1,
+  "front": "Question?",
+  "back": "Answer.",
+  "deckId": 1
+}
